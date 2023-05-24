@@ -1023,6 +1023,15 @@ class Client:
         """
         data = self.fetch(endpoint="/chat/v4/friendrequests", endpoint_type="local")
         return data
+    
+    def fetch_player_info_by_PUUID(self, puuid: t.Optional[t.Text] = None) -> t.Mapping[str, t.Any]:
+        """        
+        Get player username from PUUID
+        """
+        puuid = self.__check_puuid(puuid)
+        data = self.fetch(endpoint="/name-service/v2/players", endpoint_type="local")
+        feturn data
+
 
     # local utility functions
     def __get_live_season(self) -> str:
