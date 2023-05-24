@@ -1029,7 +1029,7 @@ class Client:
         Get player username from PUUID
         """
         puuid = self.__check_puuid(puuid)
-        data = self.fetch(endpoint="/name-service/v3/players", endpoint_type="pd")
+        data = self.fetch(endpoint=f"/name-service/v3/players/{puuid}", endpoint_type="pd")
         return data
 
 
