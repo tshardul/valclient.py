@@ -25,7 +25,7 @@ class Auth:
         )
         data = pattern.findall(r.json()["response"]["parameters"]["uri"])[0]
         access_token = data[0]
-        # print('Access Token: ' + access_token)
+        print('Access Token: ' + access_token)
 
         headers = {
             "Authorization": f"Bearer {access_token}",
@@ -36,7 +36,7 @@ class Auth:
             json={},
         )
         entitlements_token = r.json()["entitlements_token"]
-        # print('Entitlements Token: ' + entitlements_token)
+        print('Entitlements Token: ' + entitlements_token)
 
         r = session.post(
             "https://auth.riotgames.com/userinfo", headers=headers, json={}
