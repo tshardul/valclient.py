@@ -1030,7 +1030,7 @@ class Client:
         """
         puuid = self.__check_puuid(puuid)
         data = self.fetch(endpoint="/name-service/v2/players", endpoint_type="local")
-        feturn data
+        return data
 
 
     # local utility functions
